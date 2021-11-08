@@ -1,0 +1,2 @@
+# CafeApp
+Organize your customres and let them choose what to eat/drink from the comfrot of their table without a waiter passing a long list of requests back to the chef or barista. Make those customer requests digital and very fast with this app. And for those that don't know if the bar or restaurant that the love and like is full or if there is any free spots now just a simple click will let you know :D
