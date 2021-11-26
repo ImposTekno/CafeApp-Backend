@@ -1,6 +1,6 @@
 package com.ImposTekno.CafeApp.Service;
 
-import com.ImposTekno.CafeApp.CustomExceptions.UserNotFoundException;
+import com.ImposTekno.CafeApp.CustomExceptions.ModelNotFoundException;
 import com.ImposTekno.CafeApp.Model.User;
 import com.ImposTekno.CafeApp.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +44,13 @@ public class UserService {
     public User findUserById(Long _id)
     {
         // Getting specific user by his/hers id
-        return userRepo.findUserById(_id).orElseThrow(()-> new UserNotFoundException("User was not found by specified id: " + _id));
+        return userRepo.findUserById(_id).orElseThrow(()-> new ModelNotFoundException("User was not found by specified id: " + _id));
+    }
+
+    public User findUserByName(String _name)
+    {
+        // Getting specific user by his/hers username
+        return userRepo.findUserByfirstName(_name).orElseThrow(()-> new ModelNotFoundException("User was not found by specified name: " + _name));
     }
 
 }

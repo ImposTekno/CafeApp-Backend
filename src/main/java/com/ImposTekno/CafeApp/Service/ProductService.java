@@ -1,6 +1,5 @@
 package com.ImposTekno.CafeApp.Service;
 
-import com.ImposTekno.CafeApp.CustomExceptions.ProductNotFoundException;
 import com.ImposTekno.CafeApp.Model.Product;
 import com.ImposTekno.CafeApp.Repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +23,11 @@ public class ProductService {
        return productRepo.save(newProd);
     }
 
+    public List<Product>addMultipleProducts(List<Product> pList)
+    {
+        return productRepo.saveAll(pList);
+    }
+
     //Get a product by a name attribute
     public Product getProductByName(String _name) {
        return productRepo.findByProductName(_name);
@@ -45,6 +49,11 @@ public class ProductService {
     public void deleteById(Long id)
     {
         productRepo.deleteById(id);
+    }
+
+    // Delete all products
+    public void deleteAll(){
+     productRepo.deleteAll();
     }
 
 

@@ -43,6 +43,13 @@ public class ProductController {
         return new ResponseEntity<>(newProduct, HttpStatus.CREATED);
     }
 
+    @PostMapping("/multiple")
+    public ResponseEntity<List<Product>> addMultipleProducts(@RequestBody List<Product> _pList)
+    {
+        List<Product> pList = prodService.addMultipleProducts(_pList);
+        return new ResponseEntity<>(pList,HttpStatus.CREATED);
+    }
+
     @PutMapping("/update")
     public ResponseEntity<Product> updateProduct(@RequestBody Product updatedProd)
     {
@@ -57,6 +64,12 @@ public class ProductController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @DeleteMapping("/delete/all")
+    public ResponseEntity<Product> deleteAllProducts()
+    {
+        prodService.deleteAll();
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
 
 
