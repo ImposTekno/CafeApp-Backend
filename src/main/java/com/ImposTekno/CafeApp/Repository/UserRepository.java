@@ -16,4 +16,5 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     // Query method for finding a user with specified 'id' in a database
     Optional<User> findUserById(Long id);
+    Optional<User> findUserByfirstName(String name);
 }
