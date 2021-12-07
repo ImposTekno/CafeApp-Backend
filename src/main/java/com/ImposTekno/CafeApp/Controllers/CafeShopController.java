@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/shops")
 public class CafeShopController {
@@ -52,6 +53,7 @@ public class CafeShopController {
         CafeShop updatedShop = cafeService.updateShop(inShop);
         return new ResponseEntity<>(updatedShop, HttpStatus.OK);
     }
+
 
     @DeleteMapping("/delete/{name}")
     public ResponseEntity<CafeShop> deleteByName(@PathVariable("name") String inName)
